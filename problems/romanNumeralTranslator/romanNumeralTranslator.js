@@ -15,19 +15,31 @@
  *
  * You should return `null` on invalid input.
  */
+ //
+ // function DIGIT_VALUES (n) {
+ //   switch (n){
+ //   case "I": 1,
+ //   case "V": 5,
+ //   case "X": 10,
+ //   case "L": 50,
+ //   case "C": 100,
+ //   case "D": 500,
+ //   case "M": 1000
+ //    }
+ // };
 
-var DIGIT_VALUES = {
-  I: 1,
-  V: 5,
-  X: 10,
-  L: 50,
-  C: 100,
-  D: 500,
-  M: 1000
-};
-
-var translateRomanNumeral = function(romanNumeral) {
-// TODO: Implement me!
-/* START SOLUTION */
-  /* END SOLUTION */
-};
+ function translateRomanNumeral(romanNumeral) {
+ // TODO: Implement me!
+ /* START SOLUTION */
+   /* END SOLUTION */
+   var result = 0;
+   var decimal = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+   var roman = ["M", "CM","D","CD","C", "XC", "L", "XL", "X","IX","V","IV","I"];
+   for (var i = 0;i<=decimal.length;i++) {
+     while (romanNumeral.indexOf(roman[i]) === 0){
+       result += decimal[i];
+       romanNumeral = romanNumeral.replace(roman[i],'');
+     }
+   }
+   return result;
+   }
